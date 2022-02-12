@@ -1,8 +1,6 @@
-import { FormEvent } from "react";
-
 export interface IContentProps {
-  onClick: (event) => void;
-  onChange: (event: FormEvent) => void;
+  onClick: () => void;
+  onChange: () => void;
   placeholder: string0;
   value: string | undefined;
 }
