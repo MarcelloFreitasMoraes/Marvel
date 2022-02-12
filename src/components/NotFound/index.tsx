@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-import error from "assets/notfound.png";
+import { ButtonComponent } from "../../components/Button";
+
+import error from "../../assets/notfound.png";
 
 import * as S from "./styles";
-import { ButtonComponent } from "components/Button";
 
 function redirectToHome() {
   window.location.href = "/";

@@ -1,9 +1,9 @@
 import React from 'react'
+import Image from 'next/image';
 
-import Loading from 'assets/loading.gif';
+import Loading from '../../assets/loading.gif';
 
 import { Background } from './styles'
-import Image from 'next/image';
 
 export function LoadingComponent() {
   return (

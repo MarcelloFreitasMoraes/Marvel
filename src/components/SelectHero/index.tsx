@@ -1,7 +1,8 @@
 import * as S from "./styles";
 
-import { IContentDataProps } from "types/result";
-import { TypographicComponent } from "components/Typographic";
+import { TypographicComponent } from "../../components/Typographic";
+
+import { IContentDataProps } from "../../types/result";
 
 export function SelectHeroComponent({ data }: IContentDataProps) {
 

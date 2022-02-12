@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { IContentHeroesProps } from "types/result";
+import { IContentHeroesProps } from "../types/result";
 
-import { HeaderComponent } from "components/Header";
-import { LoadingComponent } from "components/Loading";
-import { NotFoundComponent } from "components/NotFound";
-import { SelectHeroComponent } from "components/SelectHero";
-import { TypographicComponent } from "components/Typographic";
+import { HeaderComponent } from "../components/Header";
+import { LoadingComponent } from "../components/Loading";
+import { NotFoundComponent } from "../components/NotFound";
+import { SelectHeroComponent } from "../components/SelectHero";
+import { TypographicComponent } from "../components/Typographic";
 
-import * as S from "styles/result";
+import * as S from "../styles/result";
 
 export default function Result() {
   const [search, setSearch] = useState<IContentHeroesProps[]>([]);

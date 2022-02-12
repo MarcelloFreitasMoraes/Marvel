@@ -1,4 +1,5 @@
-import { LogoComponent } from "components/Logo";
+import { LogoComponent } from '../Logo'
+
 import { Content } from "./styles";
 
 export function HeaderComponent() {

@@ -4,13 +4,13 @@ import type { NextPage } from 'next'
 
 import { BsPlayCircle } from 'react-icons/bs'
 
-import hero from "assets/spider.png";
+import hero from "../assets/spider.png";
 
-import { FormComponent } from 'components/Form';
-import { ButtonComponent } from 'components/Button';
-import { TypographicComponent } from 'components/Typographic';
+import { FormComponent } from '../components/Form';
+import { ButtonComponent } from '../components/Button';
+import { TypographicComponent } from '../components/Typographic';
 
-import * as S from "styles/home";
+import * as S from "../styles/home";
 
 const Home: NextPage = () => {
 

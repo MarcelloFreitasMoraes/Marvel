@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Logo from 'assets/vector.svg';
+import Logo from '../../assets/vector.svg';
 
 import { LogoImage } from "./styles";
 
