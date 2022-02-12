@@ -25,8 +25,7 @@ export default function Result() {
 
   useEffect(() => {
     document.title = `Resultado: ${nameHero} | Marvel Comics for tests!`;
-  }),
-    [];
+  }), [];
 
   useEffect(() => {
     const BASE_URL = process.env.NEXT_PUBLIC_RESULT_BASE_URL

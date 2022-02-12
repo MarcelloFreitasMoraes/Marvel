@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "pre-commit": "yarn lint"
+    "pre-commit": "yarn lint --fix && git add -A ."
   },
   "dependencies": {
     "axios": "^0.25.0",

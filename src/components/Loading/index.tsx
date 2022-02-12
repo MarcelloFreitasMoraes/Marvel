@@ -8,7 +8,7 @@ import Image from 'next/image';
 export function LoadingComponent() {
   return (
     <Background>
-        <Image src={Loading} width={200} height={200} alt="Loading..." />
+      <Image src={Loading} width={200} height={200} alt="Loading..." />
     </Background>
   )
 }
