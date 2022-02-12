@@ -35,6 +35,21 @@ export const Footer = styled.footer`
       filter: brightness(0.8);
     }
   }
+
+  @media (max-width: 768px) {
+    height: 6rem;
+    > div {
+      flex-direction: column;
+
+      p {
+        margin: 1rem 0;
+      }
+
+      .icons {
+        margin: 0 auto;
+      }
+    }  
+  }
 `;
 
 export const Github = styled(AiFillGithub)`

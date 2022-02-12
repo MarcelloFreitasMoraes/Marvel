@@ -1,11 +1,12 @@
 import * as S from "./styles";
 
 import { IContentDataProps } from "types/result";
+import { TypographicComponent } from "components/Typographic";
 
 export function SelectHeroComponent({ data }: IContentDataProps) {
 
   const maxDescription = data.description.substring(0, 100);
-  const date = data.modified.substring(10, 0);  
+  const date = data.modified.substring(10, 0);
 
   return (
     <S.Content>
@@ -17,17 +18,27 @@ export function SelectHeroComponent({ data }: IContentDataProps) {
         />
 
         <S.Info>
-          <h3>{data.name}</h3>
+          <TypographicComponent title={data.name} regular />
 
-          <p>{data.description ? `${maxDescription}...` : "Dont't have description..."}</p>
+          <TypographicComponent
+            title={data.description ?
+              `${maxDescription}...`
+              : "Dont't have description..."}
+            description
+          />
 
           <S.FooterInfo>
-              <span>{data.id}</span>
-              <p>{date}</p>
+            <S.Id>
+              <TypographicComponent title="Identificação" small />
+              <TypographicComponent title={data.id} small primary />
+            </S.Id>
+
+            <S.Date>
+              <TypographicComponent title="Última Modificação" small />
+              <TypographicComponent title={date} small primary />
+            </S.Date>
           </S.FooterInfo>
         </S.Info>
-
-        <S.Call></S.Call>
       </S.Container>
     </S.Content>
   );

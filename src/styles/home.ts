@@ -48,6 +48,15 @@ export const GroupLeft = styled.section`
             margin-bottom: 1rem;
         }
     }
+
+
+    @media (max-width: 768px) {
+        > div {
+            max-width: 100%;
+
+            padding: 0 2rem;
+        }
+    }
 `
 
 export const Buttons = styled.div`
@@ -67,6 +76,8 @@ export const GroupRight = styled.section`
 
     height: calc(100vh - 3rem);
     flex: 1;
+    display: flex;
+    align-items: center;
 
     background-color: var(--blue-dark);
     box-shadow: -10px 3px 15px rgba(0,0,0,0.5);
@@ -74,6 +85,9 @@ export const GroupRight = styled.section`
     div {
         position: absolute;
         left: -70px;
-        top: 20%;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 `

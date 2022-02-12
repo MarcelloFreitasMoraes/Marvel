@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-    color: var(--light);
+export const Heading = styled.div`
+    margin: 2rem 0;
 
-    span {
-        color: var(--red-400);
+    display: flex;
+
+    h2:first-child {
+        margin-right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        justify-content: center;
     }
 `
 
@@ -19,5 +25,10 @@ export const ListHero = styled.ul`
 
     li {
         margin-bottom: 2rem;;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
     }
 `

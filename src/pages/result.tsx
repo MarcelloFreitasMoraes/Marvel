@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import * as S from "styles/result";
-
 import { IContentHeroesProps } from "types/result";
-import { NotFoundComponent } from "components/NotFound";
+
 import { HeaderComponent } from "components/Header";
 import { LoadingComponent } from "components/Loading";
+import { NotFoundComponent } from "components/NotFound";
 import { SelectHeroComponent } from "components/SelectHero";
+import { TypographicComponent } from "components/Typographic";
+
+import * as S from "styles/result";
 
 export default function Result() {
   const [search, setSearch] = useState<IContentHeroesProps[]>([]);
-  const [searchHero, setSearchHero] = useState("");
-  const [itensPerPage, setItensPerPage] = useState(5);
-  const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
 
   let url: string;
@@ -30,35 +29,28 @@ export default function Result() {
     [];
 
   useEffect(() => {
+    const BASE_URL = process.env.NEXT_PUBLIC_RESULT_BASE_URL
+    const EXTENSION_URL = process.env.NEXT_PUBLIC_RESULT_EXTENSION_URL
+
     setLoading(true);
     axios
       .get(
-        `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${nameHero}&ts=1&apikey=dfdfc06935a1fe33837da6934f7b5373&hash=f5a214e5c63b897dfe0ebc1a1185c936`
+        `${BASE_URL}${nameHero}${EXTENSION_URL}`
       )
-      .then((preview) => {
-        setSearch(preview.data.data.results);
+      .then((response) => {
+        setSearch(response.data.data.results);
         setLoading(false);
       });
   }, []);
 
-  useEffect(() => {
-    setCurrentPage(0);
-  }, [itensPerPage]);
-
-  const pages = Math.ceil(search.length / itensPerPage);
-  const startIndex = currentPage * itensPerPage;
-  const endIndex = startIndex + itensPerPage;
-  const currentItens = search.slice(startIndex, endIndex);
-
   const resultSearchTitle = () => {
     return (
-      <S.Title>
-        Você pesquisou: <span>{nameHero}</span>
-      </S.Title>
+      <S.Heading>
+        <TypographicComponent title="Você pesquisou: " medium />
+        <TypographicComponent title={nameHero} medium primary />
+      </S.Heading>
     );
   };
-
-  console.log(search);
 
   return (
     <>

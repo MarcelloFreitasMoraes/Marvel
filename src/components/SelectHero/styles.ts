@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Content = styled.li`
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
 
     padding: 1rem;
 
@@ -10,6 +11,12 @@ export const Content = styled.li`
     width: 100%;
 
     border-radius: var(--border-r);
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 `
 
 export const Container = styled.div``
@@ -35,7 +42,7 @@ export const Info = styled.div`
 `
 
 export const FooterInfo = styled.div`
-    margin-top: 1rem;
+    margin: 1rem 0;
 
     display: flex;
     justify-content: space-between;
@@ -47,4 +54,6 @@ export const FooterInfo = styled.div`
     }
 `;
 
-export const Call = styled.div``
+export const Id = styled.div``
+
+export const Date = styled.div``

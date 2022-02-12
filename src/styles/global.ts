@@ -16,6 +16,11 @@ export const GlobalStyle = createGlobalStyle`
         --font-family-title: 'Roboto', sans-serif;
         --font-family-text: 'Poppins', sans-serif;
 
+        --font-size-large: 3rem;
+        --font-size-medium: 2rem;
+        --font-size-regular: 1rem;
+        --font-size-small: .8rem;
+
         //Others
         --border-r: 0.25rem;
     }

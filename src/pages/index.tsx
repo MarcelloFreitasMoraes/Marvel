@@ -1,13 +1,16 @@
-import type { NextPage } from 'next'
-import { BsPlayCircle } from 'react-icons/bs'
 import Head from 'next/head'
 import Image from 'next/image';
+import type { NextPage } from 'next'
+
+import { BsPlayCircle } from 'react-icons/bs'
 
 import hero from "assets/spider.png";
 
-import * as S from "styles/home";
 import { FormComponent } from 'components/Form';
 import { ButtonComponent } from 'components/Button';
+import { TypographicComponent } from 'components/Typographic';
+
+import * as S from "styles/home";
 
 const Home: NextPage = () => {
 
@@ -21,15 +24,15 @@ const Home: NextPage = () => {
         <S.GroupLeft>
           <div>
             <FormComponent />
-            <h4>For test next js</h4>
-            <h1>Marvel Api</h1>
-            <p>
-              Produced 100% by Vinicius Italo. Login and have fun in the world
-              of marvel
-            </p>
+            <TypographicComponent title="For test next js" small />
+            <TypographicComponent title="Marvel Api" large />
+
+            <TypographicComponent title="Produced 100% by Vinicius Italo. Login and have fun in the world
+              of marvel" description />
+
             <S.Buttons>
-              <ButtonComponent title="Subscribe" primary type='button' onClick={() => {}} />
-              <ButtonComponent title="New Movie" type='button' onClick={() => {}} haveIcon icon={<BsPlayCircle />}/>
+              <ButtonComponent title="Subscribe" primary type='button' onClick={() => { }} />
+              <ButtonComponent title="New Movie" type='button' onClick={() => { }} haveIcon icon={<BsPlayCircle />} />
             </S.Buttons>
           </div>
         </S.GroupLeft>
