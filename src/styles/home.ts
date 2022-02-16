@@ -91,3 +91,9 @@ export const GroupRight = styled.section`
         display: none;
     }
 `
+
+export const ContentSubscribe = styled.div`
+    div {
+        margin-top: 1rem;
+    }
+`

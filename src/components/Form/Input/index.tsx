@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-import { InputField, SearchIcon } from "./styles";
+import * as S from "./styles";
 import { IContentProps } from "./types";
 
 export function InputComponent({
@@ -8,6 +8,8 @@ export function InputComponent({
   onChange,
   placeholder,
   value,
+  iconSearch,
+  iconSend
 }: IContentProps) {
   const focusInput = useRef<any>(null);
 
@@ -16,7 +18,7 @@ export function InputComponent({
   }, []);
 
   return (
-    <InputField>
+    <S.InputField>
       <input
         type="text"
         value={value}
@@ -24,9 +26,16 @@ export function InputComponent({
         onChange={onChange}
         ref={focusInput}
       />
-      <button type="submit" onClick={onClick}>
-        <SearchIcon />
-      </button>
-    </InputField>
+      {iconSearch && (
+        <button type="submit" onClick={onClick}>
+          <S.SearchIcon />
+        </button>
+      )}
+      {iconSend && (
+        <button type="submit" onClick={onClick}>
+          <S.SendIcon />
+        </button>
+      )}
+    </S.InputField>
   );
 }

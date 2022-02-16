@@ -6,4 +6,6 @@ export interface IContentProps {
   onChange: (event: FormEvent) => void;
   placeholder: string0;
   value: string | undefined;
+  iconSearch?: boolean;
+  iconSend?: boolean;
 }
