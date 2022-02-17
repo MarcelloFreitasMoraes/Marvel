@@ -3,6 +3,7 @@ import * as S from "./styles";
 import { TypographicComponent } from "../../components/Typographic";
 
 import { IContentDataProps } from "../../types/result";
+import Link from "next/link";
 
 export function SelectHeroComponent({ data }: IContentDataProps) {
 
@@ -12,11 +13,13 @@ export function SelectHeroComponent({ data }: IContentDataProps) {
   return (
     <S.Content>
       <S.Container>
-        <S.Thumbnail
-          src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
-          width={300}
-          height={280}
-        />
+        <Link href={`details?id=${data.id}`} passHref>
+          <S.Thumbnail
+            src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+            width={300}
+            height={280}
+          />
+        </Link>
 
         <S.Info>
           <TypographicComponent title={data.name} regular />

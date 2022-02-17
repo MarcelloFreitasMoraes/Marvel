@@ -6,13 +6,17 @@ import { IContentHeroesProps } from "../types/result";
 import { HeaderComponent } from "../components/Header";
 import { LoadingComponent } from "../components/Loading";
 import { NotFoundComponent } from "../components/NotFound";
+import { PaginationComponent } from "../components/Pagination";
 import { SelectHeroComponent } from "../components/SelectHero";
 import { TypographicComponent } from "../components/Typographic";
+import { SelectOptionsComponent } from "../components/SelectOptions";
 
 import * as S from "../styles/result";
 
 export default function Result() {
   const [search, setSearch] = useState<IContentHeroesProps[]>([]);
+  const [itensPerPage, setItensPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
 
   let url: string;
@@ -42,11 +46,24 @@ export default function Result() {
       });
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [itensPerPage]);
+
+  const pages = Math.ceil(search.length / itensPerPage);
+  const startIndex = currentPage * itensPerPage;
+  const endIndex = startIndex + itensPerPage;
+  const currentItens = search.slice(startIndex, endIndex);
+
   const resultSearchTitle = () => {
     return (
       <S.Heading>
-        <TypographicComponent title="Você pesquisou: " medium />
-        <TypographicComponent title={nameHero} medium primary />
+        <S.HeadingTitle>
+          <TypographicComponent title="Você pesquisou: " medium />
+          <TypographicComponent title={nameHero} medium primary />
+        </S.HeadingTitle>
+
+        <SelectOptionsComponent itensPerPage={itensPerPage} setItensPerPage={setItensPerPage} />
       </S.Heading>
     );
   };
@@ -62,7 +79,7 @@ export default function Result() {
           <>
             {search.length > 0 ? (
               <S.ListHero>
-                {search.map((item) => (
+                {currentItens.map((item) => (
                   <SelectHeroComponent key={item.id} data={item} />
                 ))}
               </S.ListHero>
@@ -71,7 +88,9 @@ export default function Result() {
             )}
           </>
         )}
+        <PaginationComponent pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </div>
+
     </>
   );
 }

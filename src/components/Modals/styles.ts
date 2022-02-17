@@ -19,6 +19,8 @@ export const Background = styled.div`
 `
 
 export const Content = styled.div<IModalDarkProps>`
+    max-width: 550px;
+    width: 100%;
     background: ${(props) => props.isModalDark ? 'var(--blue-dark)' : 'var(--light)'};
 
     position: relative;

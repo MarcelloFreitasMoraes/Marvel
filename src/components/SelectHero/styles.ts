@@ -11,7 +11,6 @@ export const Content = styled.li`
 
     border-radius: var(--border-r);
     transition: background-color 0.2s;
-    cursor: pointer;
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.8);
@@ -22,6 +21,8 @@ export const Container = styled.div``
 
 export const Thumbnail = styled(Image)`
     border-radius: var(--border-r);
+
+    cursor: pointer;
 `
 
 export const Info = styled.div`
