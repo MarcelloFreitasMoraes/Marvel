@@ -3,13 +3,14 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 
 import { HeaderComponent } from '../components/Header'
-import { CardsDetailsComponent } from "../components/InformationHero";
+import { InformationHerosComponent } from "../components/InformationHero";
 import { LoadingComponent } from "../components/Loading";
 import { NotFoundComponent } from "../components/NotFound";
 
 import { Hero } from "../types/hero";
 
 import * as S from '../styles/details'
+import { ListHeroComponent } from "../components/ListInformationHero";
 
 export default function Details() {
   const [searchContentHero, setSearchContentHero] = useState<Hero[]>([]);
@@ -46,21 +47,27 @@ export default function Details() {
 
       <HeaderComponent />
 
-      {loading ? (
-        <LoadingComponent />
-      ) : (
-        <>
-          {searchContentHero.length > 0 ? (
-            <S.ListHero>
-              {searchContentHero.map((item) => (
-                <CardsDetailsComponent key={item.id} hero={item} />
-              ))}
-            </S.ListHero>
-          ) : (
-            <NotFoundComponent />
-          )}
-        </>
-      )}
+      <div className="container">
+        {loading ? (
+          <LoadingComponent />
+        ) : (
+          <>
+            {searchContentHero.length > 0 ? (
+              <S.ListHero>
+                {searchContentHero.map((item) => (
+                  <InformationHerosComponent key={item.id} hero={item} />
+                ))}
+
+                {searchContentHero.map((item) => (
+                  <ListHeroComponent key={item.id} hero={item} />
+                ))}
+              </S.ListHero>
+            ) : (
+              <NotFoundComponent />
+            )}
+          </>
+        )}
+      </div>
     </>
   )
 }

@@ -5,5 +5,7 @@ export const Content = styled.header`
     
     > div {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 `
