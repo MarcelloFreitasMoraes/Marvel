@@ -64,7 +64,7 @@ const Home: NextPage = () => {
             <TypographicComponent title="For test next js" small />
             <TypographicComponent title="Marvel Api" large />
 
-            <TypographicComponent title="Produced 100% by Vinicius Italo. Login and have fun in the world
+            <TypographicComponent title="Produced 100% by Marcelo Moraes. Login and have fun in the world
               of marvel" description />
 
             <S.Buttons>

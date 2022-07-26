@@ -8,20 +8,20 @@ export function FooterComponent() {
       <div className="container">
         <p>
           Desenvolvido por{" "}
-          <Link href="https://github.com/ViniciusIDaCruz" passHref>
-            <strong>Vinicius Italo</strong>
+          <Link href="https://github.com/MarcelloFreitasMoraes" passHref>
+            <strong>Marcelo Moraes </strong>
           </Link>
         </p>
         <div className="icons">
-          <Link href="https://github.com/ViniciusIDaCruz" passHref>
+          <Link href="https://github.com/MarcelloFreitasMoraes" passHref>
             <S.Github />
           </Link>
 
-          <Link href="https://www.facebook.com/viniitalodacruz/" passHref>
+          <Link href="https://www.facebook.com/marcellofreitasmoraes/" passHref>
             <S.Facebook />
           </Link>
 
-          <Link href="https://br.linkedin.com/in/vinicius-italo-da-cruz-79402821a" passHref>
+          <Link href="https://www.linkedin.com/in/marcelo-moraes-2a58161a1/" passHref>
             <S.Linkedin />
           </Link>
         </div>
