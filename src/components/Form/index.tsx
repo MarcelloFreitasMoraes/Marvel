@@ -29,6 +29,7 @@ export function FormComponent({ isSearch, isSend }: IConditionProps) {
             placeholder="Busque por seu herói..."
             value={hero}
             onClick={onSubmitSearch}
+            //@ts-ignore
             onChange={(event) => setHero(event.target.value)}
             iconSearch
           />
@@ -40,6 +41,7 @@ export function FormComponent({ isSearch, isSend }: IConditionProps) {
             placeholder="Digite o seu email..."
             value={email}
             onClick={onSendEmail}
+            //@ts-ignore
             onChange={(event) => setEmail(event.target.value)}
             iconSend
           />

@@ -10,6 +10,7 @@ import { NotFoundComponent } from "../components/NotFound";
 import { Hero } from "../types/hero";
 
 import * as S from '../styles/details'
+//@ts-ignore
 import { ListHeroComponent } from "../components/ListInformationHero";
 
 export default function Details() {

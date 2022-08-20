@@ -13,6 +13,7 @@ const Template: ComponentStory<typeof SelectHeroComponent> = (args) => <SelectHe
 export const Default = Template.bind({});
 
 Default.args = {
+  //@ts-ignore
   data: {
     description: 'Descrição',
     id: 154511,
