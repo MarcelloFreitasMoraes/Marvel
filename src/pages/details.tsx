@@ -10,8 +10,6 @@ import { NotFoundComponent } from "../components/NotFound";
 import { Hero } from "../types/hero";
 
 import * as S from '../styles/details'
-//@ts-ignore
-// import { ListHeroComponent } from "../components/ListInformationHero";
 
 export default function Details() {
   const [searchContentHero, setSearchContentHero] = useState<Hero[]>([]);
@@ -57,11 +55,7 @@ export default function Details() {
               <S.ListHero>
                 {searchContentHero.map((item) => (
                   <InformationHerosComponent key={item.id} hero={item} />
-                ))}
-
-                {/* {searchContentHero.map((item) => (
-                  <ListHeroComponent key={item.id} hero={item} />
-                ))} */}
+                ))}             
               </S.ListHero>
             ) : (
               <NotFoundComponent />
